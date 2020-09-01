@@ -35,7 +35,10 @@ class CollectionsTest {
         //  No `for` is allowed.
         //
         // <--start
-
+        while (iterator.hasNext())
+        {
+            list.add(iterator.next());
+        }
         // --end-->
 
         return list;
@@ -53,15 +56,15 @@ class CollectionsTest {
 
         ListIterator<String> iterator = staff.listIterator();
         iterator.next();
-        iterator.add("Juliet");
-        iterator.previous();
-        iterator.remove();
+        iterator.add("Juliet");//add方法在迭代器位置之前添加一个新对象
+        iterator.previous();//返回 "juliet"对象
+        iterator.remove();//删除"juliet"对象
 
         // TODO:
         //  Please write your answer directly.
         //
         // <--start
-        final List<String> expected = null;
+        final List<String> expected = Arrays.asList("Amy", "Bob","Carl");
         // --end-->
 
         assertIterableEquals(expected, staff);
@@ -81,7 +84,7 @@ class CollectionsTest {
         //  Please write down your answer directly.
         //
         // <--start
-        final List<Integer> expected = null;
+        final List<Integer> expected = Arrays.asList(0,1,2,10,11);
         // --end-->
 
         assertIterableEquals(expected, integers);
