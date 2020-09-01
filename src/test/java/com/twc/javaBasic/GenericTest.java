@@ -14,7 +14,7 @@ class GenericTest {
     //  The getMiddle method is a generic method. Now, please call getMiddle method for string
     //  type.
     // <--start
-    final String middle = null;
+    final String middle = getMiddle(words);
     // --end-->
 
     assertEquals("Good", middle);
@@ -52,8 +52,14 @@ class GenericTest {
   //  You should not change the signature of the function. But you can change
   //  the declaration of the generic type parameter.
   // <--start
-  private static <T> T min(T[] values) {
-    throw new RuntimeException("Not implemented");
+  private static <T extends Comparable> T min(T[] values){
+    T res=values[0];
+    for(T val:values) {
+      if (res.compareTo(val) > 0) {
+        res = val;
+      }
+    }
+    return res;
   }
   // --end-->
 
@@ -65,7 +71,13 @@ class GenericTest {
   //  A wildcard is not a type variable, so we can’t write code that uses ? as a type.
   // <--start
   private static void swap(Pair<?> pair) {
-    throw new RuntimeException("Not implemented");
+    swaphelper(pair);
+  }
+
+  private static <T> void swaphelper(Pair<T> p){
+    T k=p.getFirst();
+    p.setFirst(p.getSecond());
+    p.setSecond(k);
   }
 
   // TODO: You can add additional method within the range if you like
