@@ -67,6 +67,8 @@ class ObjectTest {
         //  If you find it difficult, please check page 164 of "Core Java Vol 1", section 4.5.
         // <--start
         final String expected = "Updated Name";
+
+
         // --end-->
 
         assertEquals(expected, instance.getName());
