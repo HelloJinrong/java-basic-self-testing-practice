@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BooleanOperatorsTest {
-  @SuppressWarnings({"PointlessBooleanExpression", "ConstantConditions"})
+  @SuppressWarnings({"PointlessBooleanExpression", "ConstantConditions"})//忽略警告
   @Test
   void should_perform_logical_boolean_operations() {
     boolean[] actualResults = {
@@ -30,7 +30,7 @@ class BooleanOperatorsTest {
     //  please write your answers directly(modify the value of expectedResult to equal actualResults).
     //
     // <--start
-    boolean[] expectedResult = {};
+    boolean[] expectedResult={true,false,false,true,true,false,true,false,false,true,true,false,false,true};
     // --end-->
 
     assertArrayEquals(expectedResult, actualResults);
